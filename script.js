@@ -55,7 +55,7 @@ phoneField.addEventListener("change", function () {
   const phoneValue = phoneField.value;
   if (!/^\+(?:[0-9()\s-] ?){6,14}[0-9]$/.test(phoneValue)) {
     alert(
-      "Phone number can only contain numbers, spaces, hyphens, and parentheses!"
+      "Use correct phone number format with country code!"
     );
     phoneField.value = "";
   }
