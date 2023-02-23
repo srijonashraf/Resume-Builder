@@ -1,5 +1,7 @@
 const saveButton = document.getElementById("save");
 const resetButton = document.getElementById("reset");
+const nameField = document.getElementById("name")
+const emailField = document.getElementById("email");
 const cgpaField = document.getElementById("cgpa");
 const phoneField = document.getElementById("phone");
 const yearField = document.getElementById("year");
@@ -35,6 +37,22 @@ saveButton.addEventListener("click", () => {
     }
   } else {
     alert("All fields must be filled!");
+  }
+});
+
+nameField.addEventListener("change", function () {
+  const nameValue = nameField.value;
+  if (/\d/.test(nameValue)) {
+    alert("Name field can not contain any number!");
+    nameField.value = "";
+  }
+});
+
+emailField.addEventListener("change", function () {
+  const emailValue = emailField.value;
+  if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(emailValue)) {
+    alert("Please enter a valid email address!");
+    emailField.value = "";
   }
 });
 
@@ -78,3 +96,8 @@ durationField.addEventListener("change", function () {
     durationField.value = "";
   }
 });
+
+
+if (document.referrer !== "https://srijonashraf.github.io/Resume-Builder/") {
+  location.href = "https://srijonashraf.github.io/Resume-Builder/data-saved";
+}
