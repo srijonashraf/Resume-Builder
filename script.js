@@ -95,6 +95,9 @@ durationField.addEventListener("change", function () {
   }
 });
 
-if (document.referrer !== "https://srijonashraf.github.io/Resume-Builder/") {
-  location.href = "https://srijonashraf.github.io/Resume-Builder/data-saved";
+if (
+  document.referrer !==
+  "https://srijonashraf.github.io/Resume-Builder/data-saved"
+) {
+  location.href = "https://srijonashraf.github.io/Resume-Builder/";
 }
