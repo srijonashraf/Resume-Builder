@@ -1,5 +1,7 @@
 const saveButton = document.getElementById("save");
 const resetButton = document.getElementById("reset");
+const nameField = document.getElementById("name");
+const emailField = document.getElementById("email");
 const cgpaField = document.getElementById("cgpa");
 const phoneField = document.getElementById("phone");
 const yearField = document.getElementById("year");
@@ -38,6 +40,22 @@ saveButton.addEventListener("click", () => {
   }
 });
 
+nameField.addEventListener("change", function () {
+  const nameValue = nameField.value;
+  if (/\d/.test(nameValue)) {
+    alert("Name field can not contain any number!");
+    nameField.value = "";
+  }
+});
+
+emailField.addEventListener("change", function () {
+  const emailValue = emailField.value;
+  if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(emailValue)) {
+    alert("Please enter a valid email address!");
+    emailField.value = "";
+  }
+});
+
 cgpaField.addEventListener("change", function () {
   const cgpaValue = cgpaField.value;
 
@@ -54,9 +72,7 @@ cgpaField.addEventListener("change", function () {
 phoneField.addEventListener("change", function () {
   const phoneValue = phoneField.value;
   if (!/^\+(?:[0-9()\s-] ?){6,14}[0-9]$/.test(phoneValue)) {
-    alert(
-      "Use correct phone number format with country code!"
-    );
+    alert("Use correct phone number format with country code!");
     phoneField.value = "";
   }
 });
@@ -78,3 +94,7 @@ durationField.addEventListener("change", function () {
     durationField.value = "";
   }
 });
+
+if (document.referrer !== "https://srijonashraf.github.io/Resume-Builder/") {
+  location.href = "https://srijonashraf.github.io/Resume-Builder/data-saved";
+}
