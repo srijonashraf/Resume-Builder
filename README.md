@@ -1,4 +1,4 @@
 # Resume-Builder
-Simple Resume Builder with JS verification.
+Simple Resume Builder with JS validation.
 Live Site:
 https://srijonashraf.github.io/Resume-Builder/
