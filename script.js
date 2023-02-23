@@ -72,8 +72,10 @@ cgpaField.addEventListener("change", function () {
 phoneField.addEventListener("change", function () {
   const phoneValue = phoneField.value;
   if (!/^\+(?:[0-9()\s-] ?){6,14}[0-9]$/.test(phoneValue)) {
-    alert("Use correct phone number format with country code!");
-    phoneField.value = "";
+    if (phoneValue.length > 15) {
+      alert("Use correct phone number format with country code!");
+      phoneField.value = "";
+    }
   }
 });
 
@@ -94,10 +96,3 @@ durationField.addEventListener("change", function () {
     durationField.value = "";
   }
 });
-
-if (
-  document.referrer !==
-  "https://srijonashraf.github.io/Resume-Builder/data-saved"
-) {
-  location.href = "https://srijonashraf.github.io/Resume-Builder/";
-}
