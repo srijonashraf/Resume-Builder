@@ -96,3 +96,4 @@ durationField.addEventListener("change", function () {
     durationField.value = "";
   }
 });
+
